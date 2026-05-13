@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 dark:bg-slate-950;
+  }
+
+  input,
+  select,
+  button {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/10 bg-white/[0.08] backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.08];
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-slate-300/30 bg-white/70 px-4 py-3 text-sm text-slate-900 shadow-inner transition placeholder:text-slate-500 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 dark:border-white/10 dark:bg-slate-950/50 dark:text-white dark:placeholder:text-slate-500;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-teal-400 to-cyan-500 px-4 py-3 text-sm font-bold text-slate-950 shadow-glow transition hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.08] px-4 py-3 text-sm font-semibold text-slate-100 transition hover:bg-white/[0.14] dark:text-slate-100;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
